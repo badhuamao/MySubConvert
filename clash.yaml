@@ -2,7 +2,6 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
-log-level: info
 proxies:
 - name: 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
   server: jp-hy2.onetaplink.app
@@ -15,8 +14,6 @@ proxies:
   skip-cert-verify: false
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: CF7WJGiw6r1c8imX
 - name: 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
   server: 208.87.242.77
   port: 35000
@@ -39,8 +36,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: xnJ%rKbwakdx
 - name: 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
   server: gb1.xiaoliyu.cyou
   port: 10086
@@ -52,8 +47,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: T$rMIL_(dd($Ydfz
 - name: 🇺🇸US_3|2.5MB/s t.me/rjsxrd
   server: us1.xiaoliyu.cyou
   port: 10086
@@ -65,8 +58,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: PQ$hN78bzXWN
 - name: ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   server: 45.82.245.37
   port: 444
@@ -78,8 +69,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: cry_me_a_r1ver_2026
 - name: 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   server: jp.mjhy2.com
   port: 1443
@@ -113,8 +102,6 @@ proxies:
   skip-cert-verify: false
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: OrT7yQQIMqcvKdet
 - name: 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
   server: sg.mjhy2.com
   port: 1443
@@ -170,8 +157,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: OrT7yQQIMqcvKdet
 - name: '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
   server: hkt.ccwink.cc
   port: 56309
@@ -205,8 +190,118 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-  obfs: salamander
-  obfs-password: YmGRdMZ74sEC91FN
+- name: vpn-jp-016_1
+  server: vpn-jp-016.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-016.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-020_1
+  server: vpn-us-020.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-020.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-sg-002_1
+  server: vpn-sg-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-sg-002.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-011_1
+  server: vpn-us-011.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-011.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-007_1
+  server: vpn-jp-007.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-007.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-006_1
+  server: vpn-us-006.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-006.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-008_1
+  server: vpn-us-008.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-008.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-sg-002_2
+  server: vpn-sg-002.fastervpn.world
+  port: 8443
+  type: hysteria2
+  password: 3e96ef7d-8637-42c2-ac73-75182196e755
+  sni: vpn-sg-002.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-023_1
+  server: vpn-us-023.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-023.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-018_1
+  server: vpn-jp-018.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-018.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-018_1
+  server: vpn-us-018.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-018.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-019_1
+  server: vpn-us-019.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-019.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-021_1
+  server: vpn-us-021.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-021.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-sg-001_1
+  server: vpn-sg-001.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-sg-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-016_2
+  server: vpn-jp-016.fastervpn.world
+  port: 2086
+  type: hysteria2
+  password: somebody
+  sni: vpn-jp-016.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-001_1
+  server: vpn-jp-001.fastervpn.world
+  port: 8443
+  type: hysteria2
+  password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw
+  sni: vpn-jp-001.fastervpn.world
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 HY2提纯订阅
   type: select
@@ -229,12 +324,27 @@ proxy-groups:
   - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
   - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
   - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
+  - vpn-jp-016_1
+  - vpn-us-020_1
+  - vpn-sg-002_1
+  - vpn-us-011_1
+  - vpn-jp-007_1
+  - vpn-us-006_1
+  - vpn-us-008_1
+  - vpn-sg-002_2
+  - vpn-us-023_1
+  - vpn-jp-018_1
+  - vpn-us-018_1
+  - vpn-us-019_1
+  - vpn-us-021_1
+  - vpn-sg-001_1
+  - vpn-jp-016_2
+  - vpn-jp-001_1
   - DIRECT
 - name: ⚡ 自动测速
   type: url-test
   url: http://cp.cloudflare.com/generate_204
   interval: 300
-  tolerance: 50
   proxies:
   - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
@@ -253,5 +363,21 @@ proxy-groups:
   - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
   - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
   - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
+  - vpn-jp-016_1
+  - vpn-us-020_1
+  - vpn-sg-002_1
+  - vpn-us-011_1
+  - vpn-jp-007_1
+  - vpn-us-006_1
+  - vpn-us-008_1
+  - vpn-sg-002_2
+  - vpn-us-023_1
+  - vpn-jp-018_1
+  - vpn-us-018_1
+  - vpn-us-019_1
+  - vpn-us-021_1
+  - vpn-sg-001_1
+  - vpn-jp-016_2
+  - vpn-jp-001_1
 rules:
 - MATCH,🚀 HY2提纯订阅
