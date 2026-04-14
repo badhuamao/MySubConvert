@@ -1,50 +1,32 @@
-name: BearHome Node Sync
+name: Sync and Convert
 
-# 触发机制
 on:
   schedule:
-    # 每 6 小时自动跑一次（可以根据需要修改）
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
-    # 允许你在 GitHub 页面手动点按钮运行
+    - cron: '0 */6 * * *' # 每 6 小时运行一次
+  workflow_dispatch:      # 允许手动触发执行
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    # 关键：授予 Action 写入仓库的权限
-    permissions:
-      contents: write
-
     steps:
-      - name: 1. 检出代码
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 2. 初始化 Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.x'
 
-      - name: 3. 安装必要插件
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Run convert script
+        run: python convert.py
+
+      - name: Commit and Push
         run: |
-          pip install requests
-
-      - name: 4. 执行收割与测速脚本
-        # 这里执行的文件名必须和你仓库里的 Python 脚本名（collect.py）一致
-        run: python collect.py
-
-      - name: 5. 提交并同步到仓库
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # 检查 clash.yaml 是否真的生成了
-          if [ -f clash.yaml ]; then
-            git add clash.yaml
-            # 如果文件没变化，git commit 会报错，用 || exit 0 忽略它
-            git commit -m "电视订阅自动更新：$(date +'%Y-%m-%d %H:%M')" || exit 0
-            git push
-          else
-            echo "错误：未检测到生成的 clash.yaml 文件！"
-            exit 1
-          fi
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add clash.yaml
+          git commit -m "Auto update clash subscription (6h)" || exit 0
+          git push
