@@ -1,13 +1,33 @@
 proxies:
-  - {name: "🐻_sg-hy2.onetaplink.app_443", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.apple.com}
-  - {name: "🐻_jp-hy2.onetaplink.app_5443", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.apple.com}
+  - {name: "🐻_134.195.101.199_443", type: hysteria2, server: 134.195.101.199, port: 443, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_de.mjhy2.com_1443", type: hysteria2, server: de.mjhy2.com, port: 1443, password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_hkt.ccwink.cc_56309", type: hysteria2, server: hkt.ccwink.cc, port: 56309, password: 9e0f72bb-7ad6-4383-994a-497569a94d74, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_fre.guren1.me_8443", type: hysteria2, server: fre.guren1.me, port: 8443, password: b2325ebb-21a3-46db-ae98-44884ef6dc44, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_45.82.245.37_444", type: hysteria2, server: 45.82.245.37, port: 444, password: strong-secret-pass-777, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_jp-hy2.onetaplink.app_5443", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_sg-hy2.onetaplink.app_443", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_de4.xiaoliyu.cyou_10086", type: hysteria2, server: de4.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_dbp.qzz.io_8443", type: hysteria2, server: dbp.qzz.io, port: 8443, password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_gb1.xiaoliyu.cyou_10086", type: hysteria2, server: gb1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_208.87.242.77_35000", type: hysteria2, server: 208.87.242.77, port: 35000, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
+  - {name: "🐻_us1.xiaoliyu.cyou_10086", type: hysteria2, server: us1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, sni: www.bing.com, up: 20, down: 100}
 
 proxy-groups:
   - name: "BearHome-Auto"
     type: select
     proxies:
-      - "🐻_sg-hy2.onetaplink.app_443"
+      - "🐻_134.195.101.199_443"
+      - "🐻_de.mjhy2.com_1443"
+      - "🐻_hkt.ccwink.cc_56309"
+      - "🐻_fre.guren1.me_8443"
+      - "🐻_45.82.245.37_444"
       - "🐻_jp-hy2.onetaplink.app_5443"
+      - "🐻_sg-hy2.onetaplink.app_443"
+      - "🐻_de4.xiaoliyu.cyou_10086"
+      - "🐻_dbp.qzz.io_8443"
+      - "🐻_gb1.xiaoliyu.cyou_10086"
+      - "🐻_208.87.242.77_35000"
+      - "🐻_us1.xiaoliyu.cyou_10086"
 
 rules:
   - MATCH,BearHome-Auto
