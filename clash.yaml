@@ -2,6 +2,7 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
+log-level: info
 proxies:
 - name: 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
   server: zz.66jc.xyz
@@ -155,7 +156,7 @@ proxies:
   obfs: salamander
   obfs-password: CF7WJGiw6r1c8imX
 proxy-groups:
-- name: 🚀 HY2节点选择
+- name: 🚀 HY2提纯订阅
   type: select
   proxies:
   - ⚡ 自动测速
@@ -177,6 +178,7 @@ proxy-groups:
   type: url-test
   url: http://cp.cloudflare.com/generate_204
   interval: 300
+  tolerance: 50
   proxies:
   - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
   - 🇺🇸US_2|4.1MB/s t.me/rjsxrd
@@ -192,4 +194,4 @@ proxy-groups:
   - 6nPl9ekB_hysteria2
   - 🌐سرور 2
 rules:
-- MATCH,🚀 HY2节点选择
+- MATCH,🚀 HY2提纯订阅
