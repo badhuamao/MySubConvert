@@ -4,20 +4,20 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
-  server: zz.66jc.xyz
-  port: 20003
+- name: 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  server: jp-hy2.onetaplink.app
+  port: 5443
   type: hysteria2
-  password: de8e0342-ea12-4f9d-bc2a-e62409e1913f
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
   up: 10 Mbps
   down: 100 Mbps
-  sni: hkzz.66jc.xyz
-  skip-cert-verify: true
+  sni: hy2-jp.onetaplink.app
+  skip-cert-verify: false
   alpn:
   - h3
   obfs: salamander
-  obfs-password: YmGRdMZ74sEC91FN
-- name: 🇺🇸US_2|4.1MB/s t.me/rjsxrd
+  obfs-password: CF7WJGiw6r1c8imX
+- name: 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
   server: 208.87.242.77
   port: 35000
   type: hysteria2
@@ -28,39 +28,45 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇺🇸US_1|4.1MB/s t.me/rjsxrd
-  server: 134.195.101.199
-  port: 443
+- name: 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  server: de4.xiaoliyu.cyou
+  port: 10086
   type: hysteria2
-  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
   up: 10 Mbps
   down: 100 Mbps
-  sni: www.apple.com
+  sni: de4.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
-- name: '3818 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  server: de.mjhy2.com
-  port: 1443
+  obfs: salamander
+  obfs-password: xnJ%rKbwakdx
+- name: 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  server: gb1.xiaoliyu.cyou
+  port: 10086
   type: hysteria2
-  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
   up: 10 Mbps
   down: 100 Mbps
-  sni: de.mjhy2.com
+  sni: gb1.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇫🇷 France, Paris | 🌐 | [IPv6] | [BL] t.me/rjsxrd 2
-  server: 163.172.113.118
-  port: 40022
+  obfs: salamander
+  obfs-password: T$rMIL_(dd($Ydfz
+- name: 🇺🇸US_3|2.5MB/s t.me/rjsxrd
+  server: us1.xiaoliyu.cyou
+  port: 10086
   type: hysteria2
-  password: dongtaiwang.com
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
   up: 10 Mbps
   down: 100 Mbps
-  sni: www.microsoft.com
+  sni: us1.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
+  obfs: salamander
+  obfs-password: PQ$hN78bzXWN
 - name: ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   server: 45.82.245.37
   port: 444
@@ -74,17 +80,6 @@ proxies:
   - h3
   obfs: salamander
   obfs-password: cry_me_a_r1ver_2026
-- name: 🇭🇰 香港 | HKG t.me/rjsxrd
-  server: jpaws.ccwink.photos
-  port: 88
-  type: hysteria2
-  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
-  up: 10 Mbps
-  down: 100 Mbps
-  sni: hkak.ccwink.cc
-  skip-cert-verify: true
-  alpn:
-  - h3
 - name: 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   server: jp.mjhy2.com
   port: 1443
@@ -131,48 +126,109 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 6nPl9ekB_hysteria2
-  server: hk1.xiaoliyu.cyou
-  port: 23990
+- name: US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  server: dbp.qzz.io
+  port: 8443
   type: hysteria2
-  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw
   up: 10 Mbps
   down: 100 Mbps
-  sni: null
+  sni: dbp.qzz.io
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🌐سرور 2
-  server: jp-hy2.onetaplink.app
-  port: 5443
+- name: US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  server: 134.195.101.199
+  port: 443
+  type: hysteria2
+  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: www.apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  server: fre.guren1.me
+  port: 8443
+  type: hysteria2
+  password: b2325ebb-21a3-46db-ae98-44884ef6dc44
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: python.org
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  server: sg-hy2.onetaplink.app
+  port: 443
   type: hysteria2
   password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
   up: 10 Mbps
   down: 100 Mbps
-  sni: hy2-jp.onetaplink.app
-  skip-cert-verify: false
+  sni: hy2-sg.onetaplink.app
+  skip-cert-verify: true
   alpn:
   - h3
   obfs: salamander
-  obfs-password: CF7WJGiw6r1c8imX
+  obfs-password: OrT7yQQIMqcvKdet
+- name: '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  server: hkt.ccwink.cc
+  port: 56309
+  type: hysteria2
+  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hkt.ccwink.cc
+  skip-cert-verify: false
+  alpn:
+  - h3
+- name: '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  server: de.mjhy2.com
+  port: 1443
+  type: hysteria2
+  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: de.mjhy2.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
+  server: zz.66jc.xyz
+  port: 20003
+  type: hysteria2
+  password: de8e0342-ea12-4f9d-bc2a-e62409e1913f
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hkzz.66jc.xyz
+  skip-cert-verify: true
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: YmGRdMZ74sEC91FN
 proxy-groups:
 - name: 🚀 HY2提纯订阅
   type: select
   proxies:
   - ⚡ 自动测速
-  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
-  - 🇺🇸US_2|4.1MB/s t.me/rjsxrd
-  - 🇺🇸US_1|4.1MB/s t.me/rjsxrd
-  - '3818 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  - 🇫🇷 France, Paris | 🌐 | [IPv6] | [BL] t.me/rjsxrd 2
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
-  - 🇭🇰 香港 | HKG t.me/rjsxrd
   - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
   - 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
-  - 6nPl9ekB_hysteria2
-  - 🌐سرور 2
+  - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
   - DIRECT
 - name: ⚡ 自动测速
   type: url-test
@@ -180,18 +236,22 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
-  - 🇺🇸US_2|4.1MB/s t.me/rjsxrd
-  - 🇺🇸US_1|4.1MB/s t.me/rjsxrd
-  - '3818 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  - 🇫🇷 France, Paris | 🌐 | [IPv6] | [BL] t.me/rjsxrd 2
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
-  - 🇭🇰 香港 | HKG t.me/rjsxrd
   - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
   - 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
-  - 6nPl9ekB_hysteria2
-  - 🌐سرور 2
+  - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
 rules:
 - MATCH,🚀 HY2提纯订阅
