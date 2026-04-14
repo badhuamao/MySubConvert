@@ -1,83 +1,65 @@
 import requests
 import yaml
-import re
 import os
-from urllib.parse import urlparse, unquote
 
 # 基础配置
-GITHUB_USER = "badhuamao"
 URLS_FILE = "urls.txt"
 OUTPUT_FILE = "clash.yaml"
 
-def get_proxies_from_text(text):
-    """提取纯文本中的 hysteria2 链接"""
-    proxies = []
-    # 匹配 hy2 或 hysteria2
-    links = re.findall(r'(?:hysteria2|hy2)://[^\s"\'|]+', text)
-    for link in links:
-        try:
-            parsed = urlparse(link)
-            if '@' in parsed.netloc:
-                auth, server_port = parsed.netloc.split('@')
-                server, port = server_port.split(':')
-                query = dict(q.split('=') for q in parsed.query.split('&') if '=' in q)
-                name = unquote(parsed.fragment) if parsed.fragment else f"Hy2_{server}"
-                
-                proxies.append({
-                    "name": name.strip(),
-                    "type": "hysteria2",
-                    "server": server,
-                    "port": int(port),
-                    "password": auth,
-                    "sni": query.get('sni', server),
-                    "skip-cert-verify": True,
-                    "alpn": ["h3"]
-                })
-        except:
-            continue
-    return proxies
-
 def main():
     all_proxies = []
+    
+    # 检查 urls.txt 是否存在
     if not os.path.exists(URLS_FILE):
+        print("未找到 urls.txt 文件")
         return
 
-    with open(URLS_FILE, 'r') as f:
+    # 读取链接列表
+    with open(URLS_FILE, 'r', encoding='utf-8') as f:
         urls = [line.strip() for line in f if line.strip()]
 
+    # 设置通用的 User-Agent 模拟 Clash 客户端抓取
     headers = {'User-Agent': 'ClashforWindows/0.20.39'}
 
     for url in urls:
         try:
-            resp = requests.get(url, headers=headers, timeout=10)
-            if resp.status_code != 200: continue
+            print(f"正在抓取: {url}")
+            resp = requests.get(url, headers=headers, timeout=15)
+            if resp.status_code != 200:
+                print(f"抓取失败，状态码: {resp.status_code}")
+                continue
             
-            content = resp.text
-            # 1. 尝试解析 YAML
-            try:
-                data = yaml.safe_load(content)
-                if isinstance(data, dict) and 'proxies' in data:
-                    all_proxies.extend(data['proxies'])
-                    continue
-            except:
-                pass
-            
-            # 2. 如果 YAML 解析失败，尝试提取纯文本链接
-            txt_nodes = get_proxies_from_text(content)
-            if txt_nodes:
-                all_proxies.extend(txt_nodes)
+            # 解析 YAML 内容
+            data = yaml.safe_load(resp.text)
+            if isinstance(data, dict) and 'proxies' in data:
+                nodes = data['proxies']
+                all_proxies.extend(nodes)
+                print(f"成功获取 {len(nodes)} 个节点")
         except Exception as e:
-            print(f"处理 {url} 出错: {e}")
+            print(f"处理链接时出错: {e}")
 
-    # 生成最终文件
+    # 构造最终的 Clash 配置文件
+    # 这里的 proxy-groups 和 rules 采用了最基础的直连/分流逻辑
     config = {
         "proxies": all_proxies,
-        "proxy-groups": [{"name": "⚡️ 自动选择", "type": "url-test", "proxies": [p['name'] for p in all_proxies], "url": "http://www.gstatic.com/generate_204", "interval": 300}],
-        "rules": ["MATCH,⚡️ 自动选择"]
+        "proxy-groups": [
+            {
+                "name": "⚡️ 自动选择",
+                "type": "url-test",
+                "proxies": [p['name'] for p in all_proxies],
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300
+            }
+        ],
+        "rules": [
+            "MATCH,⚡️ 自动选择"
+        ]
     }
 
+    # 写入文件
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+    print(f"解析完成，已写入 {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
