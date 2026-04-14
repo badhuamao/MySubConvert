@@ -1,1 +1,3 @@
 https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/Superspeed.yaml
+https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/latency
+https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/list
