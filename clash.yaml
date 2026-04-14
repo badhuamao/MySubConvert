@@ -1,33 +1,33 @@
 proxies:
-  - {name: "🐻_sg-hy2.onetaplink.app_0", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_dbp.qzz.io_1", type: hysteria2, server: dbp.qzz.io, port: 8443, password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_gb1.xiaoliyu.cyou_2", type: hysteria2, server: gb1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_hkt.ccwink.cc_3", type: hysteria2, server: hkt.ccwink.cc, port: 56309, password: 9e0f72bb-7ad6-4383-994a-497569a94d74, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_jp-hy2.onetaplink.app_4", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_fre.guren1.me_5", type: hysteria2, server: fre.guren1.me, port: 8443, password: b2325ebb-21a3-46db-ae98-44884ef6dc44, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_us1.xiaoliyu.cyou_6", type: hysteria2, server: us1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_208.87.242.77_7", type: hysteria2, server: 208.87.242.77, port: 35000, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_de4.xiaoliyu.cyou_8", type: hysteria2, server: de4.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_de.mjhy2.com_9", type: hysteria2, server: de.mjhy2.com, port: 1443, password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_134.195.101.199_10", type: hysteria2, server: 134.195.101.199, port: 443, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true, skip-cert-verify: true}
-  - {name: "🐻_45.82.245.37_11", type: hysteria2, server: 45.82.245.37, port: 444, password: strong-secret-pass-777, ssl-allow-insecure: true, skip-cert-verify: true}
+  - {name: "🐻_hkt.ccwink.cc_0", type: hysteria2, server: hkt.ccwink.cc, port: 56309, password: 9e0f72bb-7ad6-4383-994a-497569a94d74, ssl-allow-insecure: true}
+  - {name: "🐻_134.195.101.199_1", type: hysteria2, server: 134.195.101.199, port: 443, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true}
+  - {name: "🐻_208.87.242.77_2", type: hysteria2, server: 208.87.242.77, port: 35000, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true}
+  - {name: "🐻_de4.xiaoliyu.cyou_3", type: hysteria2, server: de4.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
+  - {name: "🐻_45.82.245.37_4", type: hysteria2, server: 45.82.245.37, port: 444, password: strong-secret-pass-777, ssl-allow-insecure: true}
+  - {name: "🐻_fre.guren1.me_5", type: hysteria2, server: fre.guren1.me, port: 8443, password: b2325ebb-21a3-46db-ae98-44884ef6dc44, ssl-allow-insecure: true}
+  - {name: "🐻_us1.xiaoliyu.cyou_6", type: hysteria2, server: us1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
+  - {name: "🐻_jp-hy2.onetaplink.app_7", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true}
+  - {name: "🐻_dbp.qzz.io_8", type: hysteria2, server: dbp.qzz.io, port: 8443, password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw, ssl-allow-insecure: true}
+  - {name: "🐻_gb1.xiaoliyu.cyou_9", type: hysteria2, server: gb1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
+  - {name: "🐻_de.mjhy2.com_10", type: hysteria2, server: de.mjhy2.com, port: 1443, password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201, ssl-allow-insecure: true}
+  - {name: "🐻_sg-hy2.onetaplink.app_11", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true}
 
 proxy-groups:
   - name: "BearHome-Auto"
     type: select
     proxies:
-      - "🐻_sg-hy2.onetaplink.app_0"
-      - "🐻_dbp.qzz.io_1"
-      - "🐻_gb1.xiaoliyu.cyou_2"
-      - "🐻_hkt.ccwink.cc_3"
-      - "🐻_jp-hy2.onetaplink.app_4"
+      - "🐻_hkt.ccwink.cc_0"
+      - "🐻_134.195.101.199_1"
+      - "🐻_208.87.242.77_2"
+      - "🐻_de4.xiaoliyu.cyou_3"
+      - "🐻_45.82.245.37_4"
       - "🐻_fre.guren1.me_5"
       - "🐻_us1.xiaoliyu.cyou_6"
-      - "🐻_208.87.242.77_7"
-      - "🐻_de4.xiaoliyu.cyou_8"
-      - "🐻_de.mjhy2.com_9"
-      - "🐻_134.195.101.199_10"
-      - "🐻_45.82.245.37_11"
+      - "🐻_jp-hy2.onetaplink.app_7"
+      - "🐻_dbp.qzz.io_8"
+      - "🐻_gb1.xiaoliyu.cyou_9"
+      - "🐻_de.mjhy2.com_10"
+      - "🐻_sg-hy2.onetaplink.app_11"
 
 rules:
   - MATCH,BearHome-Auto
