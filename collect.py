@@ -6,92 +6,99 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 
 # --- 配置区 ---
-# 填入你所有的源链接（支持各种格式）
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/list",
     "https://extract.ashly.dpdns.org/?pw=autorun"
 ]
-
-TIMEOUT = 2  # 连接测试超时（秒），建议不要太长，否则 Action 跑太久
-MAX_WORKERS = 100  # 并发检测，Action 环境下 100 没问题
+TIMEOUT = 2
+MAX_WORKERS = 100
 
 def decode_data(raw_text):
-    """自动处理并解码 Base64，如果是明文则直接返回"""
     raw_text = raw_text.strip()
     try:
-        # 尝试补齐 Base64 填充符号
         missing_padding = len(raw_text) % 4
-        if missing_padding:
-            raw_text += '=' * (4 - missing_padding)
+        if missing_padding: raw_text += '=' * (4 - missing_padding)
         return base64.b64decode(raw_text).decode('utf-8')
     except:
         return raw_text
 
 def check_alive(ip, port):
-    """最核心的删死节点逻辑：TCP 握手"""
     try:
-        # 针对 Hysteria2，我们探测其主要 TCP/UDP 端口是否连通
         with socket.create_connection((ip, port), timeout=TIMEOUT):
             return True
     except:
         return False
 
-def extract_hy2_uris(content):
-    """正则提取所有 Hysteria2 链接"""
-    # 这个正则能精准抓取 hysteria2:// 到行尾或空格的内容
-    return re.findall(r'hysteria2://[^\s]+', content)
-
 def main():
     all_links = []
-    
-    # 1. 抓取
+    # 1. 抓取与初步提取
     for url in SOURCE_URLS:
         try:
-            print(f"正在获取: {url}")
             r = requests.get(url, timeout=15)
-            decoded_content = decode_data(r.text)
-            links = extract_hy2_uris(decoded_content)
+            decoded = decode_data(r.text)
+            links = re.findall(r'hysteria2://[^\s]+', decoded)
             all_links.extend(links)
-        except Exception as e:
-            print(f"抓取失败: {url} -> {e}")
+        except:
+            pass
 
-    # 2. 初步去重（去除完全一模一样的字符串）
+    # 2. 深度去重与存活检测
     unique_links = list(set(all_links))
-    print(f"去重前: {len(all_links)} | 字符去重后: {len(unique_links)}")
-
-    # 3. 深度去重 + 存活检测
     final_nodes = []
-    seen_addresses = set()  # 用于存储 ip:port 组合
+    seen_addresses = set()
 
     def verify_node(link):
-        # 解析链接中的 IP 和 端口
-        # 格式示例: hysteria2://auth@1.2.3.4:443?params#name
-        pattern = r'hysteria2://[^@]+@([^:/?]+):([0-9]+)'
+        # 匹配格式: hysteria2://auth@ip:port
+        pattern = r'hysteria2://([^@]+)@([^:/?]+):([0-9]+)'
         match = re.search(pattern, link)
         if match:
-            ip, port = match.group(1), int(match.group(2))
+            auth, ip, port = match.group(1), match.group(2), int(match.group(3))
             addr_id = f"{ip}:{port}"
-            
-            # 物理去重：如果这个 IP+端口 已经出现过了，就跳过
-            if addr_id in seen_addresses:
-                return None
-            
-            # 存活检测
-            if check_alive(ip, port):
-                seen_addresses.add(addr_id) # 标记为已处理
-                return link
+            if addr_id not in seen_addresses and check_alive(ip, port):
+                seen_addresses.add(addr_id)
+                # 返回提取好的信息
+                return {"auth": auth, "ip": ip, "port": port}
         return None
 
-    print("正在进行多线程存活检测...")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         results = list(executor.map(verify_node, unique_links))
         final_nodes = [r for r in results if r]
 
-    # 4. 写入文件
-    with open("sub.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(final_nodes))
+    # 3. 构建 Clash YAML 字符串
+    # 电视端 Clash 必须要有 proxies, proxy-groups 和 rules 三要素
+    yaml_content = [
+        "proxies:",
+    ]
     
-    print(f"任务完成！保留有效节点: {len(final_nodes)} 个")
+    proxy_names = []
+    for i, node in enumerate(final_nodes):
+        name = f"🐻_{node['ip']}_{node['port']}"
+        proxy_names.append(name)
+        # 写入 Hysteria2 代理配置
+        yaml_content.append(f"  - name: \"{name}\"")
+        yaml_content.append(f"    type: hysteria2")
+        yaml_content.append(f"    server: {node['ip']}")
+        yaml_content.append(f"    port: {node['port']}")
+        yaml_content.append(f"    password: {node['auth']}")
+        yaml_content.append(f"    ssl-allow-insecure: true")
+        yaml_content.append(f"    sni: www.apple.com") # 默认给个SNI增强兼容性
+
+    # 代理组配置
+    yaml_content.append("\nproxy-groups:")
+    yaml_content.append("  - name: \"BearHome-Auto\"")
+    yaml_content.append("    type: select")
+    yaml_content.append("    proxies:")
+    for name in proxy_names:
+        yaml_content.append(f"      - \"{name}\"")
+    
+    # 基础规则
+    yaml_content.append("\nrules:")
+    yaml_content.append("  - MATCH,BearHome-Auto")
+
+    # 4. 写入文件
+    with open("clash.yaml", "w", encoding="utf-8") as f:
+        f.write("\n".join(yaml_content))
+    
+    print(f"成功生成 clash.yaml，共 {len(final_nodes)} 个活节点")
 
 if __name__ == "__main__":
     main()
