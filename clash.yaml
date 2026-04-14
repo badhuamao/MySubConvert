@@ -1,33 +1,162 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
 proxies:
-  - {name: "🐻_hkt.ccwink.cc_0", type: hysteria2, server: hkt.ccwink.cc, port: 56309, password: 9e0f72bb-7ad6-4383-994a-497569a94d74, ssl-allow-insecure: true}
-  - {name: "🐻_134.195.101.199_1", type: hysteria2, server: 134.195.101.199, port: 443, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true}
-  - {name: "🐻_208.87.242.77_2", type: hysteria2, server: 208.87.242.77, port: 35000, password: 38428a74-c651-47a5-b2c9-4bec5a1809cf, ssl-allow-insecure: true}
-  - {name: "🐻_de4.xiaoliyu.cyou_3", type: hysteria2, server: de4.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
-  - {name: "🐻_45.82.245.37_4", type: hysteria2, server: 45.82.245.37, port: 444, password: strong-secret-pass-777, ssl-allow-insecure: true}
-  - {name: "🐻_fre.guren1.me_5", type: hysteria2, server: fre.guren1.me, port: 8443, password: b2325ebb-21a3-46db-ae98-44884ef6dc44, ssl-allow-insecure: true}
-  - {name: "🐻_us1.xiaoliyu.cyou_6", type: hysteria2, server: us1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
-  - {name: "🐻_jp-hy2.onetaplink.app_7", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true}
-  - {name: "🐻_dbp.qzz.io_8", type: hysteria2, server: dbp.qzz.io, port: 8443, password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw, ssl-allow-insecure: true}
-  - {name: "🐻_gb1.xiaoliyu.cyou_9", type: hysteria2, server: gb1.xiaoliyu.cyou, port: 10086, password: a4c1b618-024a-42d4-b78a-1c25c337a484, ssl-allow-insecure: true}
-  - {name: "🐻_de.mjhy2.com_10", type: hysteria2, server: de.mjhy2.com, port: 1443, password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201, ssl-allow-insecure: true}
-  - {name: "🐻_sg-hy2.onetaplink.app_11", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true}
-
+- name: 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  server: jp-hy2.onetaplink.app
+  port: 5443
+  type: hysteria2
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hy2-jp.onetaplink.app
+  skip-cert-verify: false
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: CF7WJGiw6r1c8imX
+- name: 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
+  server: 208.87.242.77
+  port: 35000
+  type: hysteria2
+  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: www.apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  server: de4.xiaoliyu.cyou
+  port: 10086
+  type: hysteria2
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: de4.xiaoliyu.cyou
+  skip-cert-verify: true
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: xnJ%rKbwakdx
+- name: 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  server: gb1.xiaoliyu.cyou
+  port: 10086
+  type: hysteria2
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: gb1.xiaoliyu.cyou
+  skip-cert-verify: true
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: T$rMIL_(dd($Ydfz
+- name: 🇺🇸US_3|2.5MB/s t.me/rjsxrd
+  server: us1.xiaoliyu.cyou
+  port: 10086
+  type: hysteria2
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: us1.xiaoliyu.cyou
+  skip-cert-verify: true
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: PQ$hN78bzXWN
+- name: ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
+  server: 45.82.245.37
+  port: 444
+  type: hysteria2
+  password: strong-secret-pass-777
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: cry_me_a_r1ver_2026
+- name: 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
+  server: jp.mjhy2.com
+  port: 1443
+  type: hysteria2
+  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: jp.mjhy2.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
+  server: kr.mjhy2.com
+  port: 1443
+  type: hysteria2
+  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: kr.mjhy2.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
+  server: usa-hy2.onetaplink.app
+  port: 443
+  type: hysteria2
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hy2-usa.onetaplink.app
+  skip-cert-verify: false
+  alpn:
+  - h3
+  obfs: salamander
+  obfs-password: OrT7yQQIMqcvKdet
+- name: 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
+  server: sg.mjhy2.com
+  port: 1443
+  type: hysteria2
+  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: sg.mjhy2.com
+  skip-cert-verify: true
+  alpn:
+  - h3
 proxy-groups:
-  - name: "BearHome-Auto"
-    type: select
-    proxies:
-      - "🐻_hkt.ccwink.cc_0"
-      - "🐻_134.195.101.199_1"
-      - "🐻_208.87.242.77_2"
-      - "🐻_de4.xiaoliyu.cyou_3"
-      - "🐻_45.82.245.37_4"
-      - "🐻_fre.guren1.me_5"
-      - "🐻_us1.xiaoliyu.cyou_6"
-      - "🐻_jp-hy2.onetaplink.app_7"
-      - "🐻_dbp.qzz.io_8"
-      - "🐻_gb1.xiaoliyu.cyou_9"
-      - "🐻_de.mjhy2.com_10"
-      - "🐻_sg-hy2.onetaplink.app_11"
-
+- name: 🚀 HY2提纯订阅
+  type: select
+  proxies:
+  - ⚡ 自动测速
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
+  - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
+  - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
+  - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
+  - 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
+  - DIRECT
+- name: ⚡ 自动测速
+  type: url-test
+  url: http://cp.cloudflare.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
+  - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
+  - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
+  - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
+  - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
+  - 🇸🇬 机场推荐:dafei.de 新加坡 05 t.me/rjsxrd
 rules:
-  - MATCH,BearHome-Auto
+- MATCH,🚀 HY2提纯订阅
