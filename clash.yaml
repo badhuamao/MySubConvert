@@ -239,6 +239,83 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-us-008.fastervpn.world
   skip-cert-verify: true
+- name: US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  server: dbp.qzz.io
+  port: 8443
+  type: hysteria2
+  password: GEbo3x7TXbmNkdmABqS4mZP7Ax5fjFBPbheKauGJJ9Sw
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: dbp.qzz.io
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  server: 134.195.101.199
+  port: 443
+  type: hysteria2
+  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: www.apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  server: fre.guren1.me
+  port: 8443
+  type: hysteria2
+  password: b2325ebb-21a3-46db-ae98-44884ef6dc44
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: python.org
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  server: sg-hy2.onetaplink.app
+  port: 443
+  type: hysteria2
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hy2-sg.onetaplink.app
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  server: hkt.ccwink.cc
+  port: 56309
+  type: hysteria2
+  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hkt.ccwink.cc
+  skip-cert-verify: false
+  alpn:
+  - h3
+- name: '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  server: de.mjhy2.com
+  port: 1443
+  type: hysteria2
+  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: de.mjhy2.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
+  server: zz.66jc.xyz
+  port: 20003
+  type: hysteria2
+  password: de8e0342-ea12-4f9d-bc2a-e62409e1913f
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: hkzz.66jc.xyz
+  skip-cert-verify: true
+  alpn:
+  - h3
 proxy-groups:
 - name: 🚀 HY2提纯订阅
   type: select
@@ -272,6 +349,13 @@ proxy-groups:
   - vpn-sg-001_1
   - vpn-us-006_1
   - vpn-us-008_1
+  - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
   - DIRECT
 - name: ⚡ 自动测速
   type: url-test
@@ -306,5 +390,12 @@ proxy-groups:
   - vpn-sg-001_1
   - vpn-us-006_1
   - vpn-us-008_1
+  - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - '4138 | 🇩🇪 Germany | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+  - 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
 rules:
 - MATCH,🚀 HY2提纯订阅
