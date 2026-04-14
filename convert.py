@@ -1,102 +1,83 @@
-import json
-import yaml
 import requests
+import yaml
+import re
 import os
+from urllib.parse import urlparse, unquote
 
-# ================= 配置区域 =================
-GITHUB_USER = "badhuamao" 
-GITHUB_REPO = "MySubConvert"
-# ===========================================
+# 基础配置
+GITHUB_USER = "badhuamao"
+URLS_FILE = "urls.txt"
+OUTPUT_FILE = "clash.yaml"
 
-def convert():
-    file_name = "urls.txt"
-    if not os.path.exists(file_name):
-        file_name = "URLS.TXT" if os.path.exists("URLS.TXT") else None
-        if not file_name:
-            print("错误：未找到 urls.txt")
-            return
+def get_proxies_from_text(text):
+    """提取纯文本中的 hysteria2 链接"""
+    proxies = []
+    # 匹配 hy2 或 hysteria2
+    links = re.findall(r'(?:hysteria2|hy2)://[^\s"\'|]+', text)
+    for link in links:
+        try:
+            parsed = urlparse(link)
+            if '@' in parsed.netloc:
+                auth, server_port = parsed.netloc.split('@')
+                server, port = server_port.split(':')
+                query = dict(q.split('=') for q in parsed.query.split('&') if '=' in q)
+                name = unquote(parsed.fragment) if parsed.fragment else f"Hy2_{server}"
+                
+                proxies.append({
+                    "name": name.strip(),
+                    "type": "hysteria2",
+                    "server": server,
+                    "port": int(port),
+                    "password": auth,
+                    "sni": query.get('sni', server),
+                    "skip-cert-verify": True,
+                    "alpn": ["h3"]
+                })
+        except:
+            continue
+    return proxies
 
-    try:
-        with open(file_name, "r", encoding="utf-8") as f:
-            urls = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-    except Exception as e:
-        print(f"读取文件失败: {e}")
-        return
+def main():
+    all_proxies = []
+    if not os.path.exists(URLS_FILE):
+        return
 
-    unique_proxies = {}
+    with open(URLS_FILE, 'r') as f:
+        urls = [line.strip() for line in f if line.strip()]
 
-    for url in urls:
-        print(f"正在抓取: {url}")
-        try:
-            response = requests.get(url, timeout=15)
-            response.raise_for_status()
-            content = response.text
-            
-            data = None
-            # 策略：先尝试 JSON (Sing-box)，失败再尝试 YAML (Clash)
-            try:
-                data = json.loads(content)
-                print(f"检测到 JSON 格式")
-                outbounds = data.get('outbounds', [])
-                for out in outbounds:
-                    if out.get('type') == 'hysteria2':
-                        tag = out.get("tag", "Unnamed_HY2")
-                        p = {
-                            "name": tag,
-                            "server": out.get("server"),
-                            "port": out.get("server_port"),
-                            "type": "hysteria2",
-                            "password": out.get("password"),
-                            "up": str(out.get("up_mbps", 10)) + " Mbps",
-                            "down": str(out.get("down_mbps", 100)) + " Mbps",
-                            "sni": out.get("tls", {}).get("server_name") if out.get("tls") else out.get("server"),
-                            "skip-cert-verify": out.get("tls", {}).get("insecure", False) if out.get("tls") else True,
-                            "alpn": out.get("tls", {}).get("alpn", ["h3"]) if out.get("tls") else ["h3"]
-                        }
-                        unique_proxies[tag] = p
-            except json.JSONDecodeError:
-                try:
-                    data = yaml.safe_load(content)
-                    print(f"检测到 YAML 格式")
-                    # Clash 格式通常在 'proxies' 列表里
-                    proxies_list = data.get('proxies', [])
-                    for out in proxies_list:
-                        if out.get('type') == 'hysteria2':
-                            tag = out.get("name", "Unnamed_HY2")
-                            # 直接保存，因为 YAML 里的字段通常已经是 Clash 格式
-                            unique_proxies[tag] = out
-                except Exception as e:
-                    print(f"YAML 解析也失败了: {e}")
+    headers = {'User-Agent': 'ClashforWindows/0.20.39'}
 
-        except Exception as e:
-            print(f"处理源 {url} 出错: {e}")
+    for url in urls:
+        try:
+            resp = requests.get(url, headers=headers, timeout=10)
+            if resp.status_code != 200: continue
+            
+            content = resp.text
+            # 1. 尝试解析 YAML
+            try:
+                data = yaml.safe_load(content)
+                if isinstance(data, dict) and 'proxies' in data:
+                    all_proxies.extend(data['proxies'])
+                    continue
+            except:
+                pass
+            
+            # 2. 如果 YAML 解析失败，尝试提取纯文本链接
+            txt_nodes = get_proxies_from_text(content)
+            if txt_nodes:
+                all_proxies.extend(txt_nodes)
+        except Exception as e:
+            print(f"处理 {url} 出错: {e}")
 
-    all_proxies = list(unique_proxies.values())
-    if not all_proxies:
-        print("未发现任何有效 HY2 节点")
-        return
+    # 生成最终文件
+    config = {
+        "proxies": all_proxies,
+        "proxy-groups": [{"name": "⚡️ 自动选择", "type": "url-test", "proxies": [p['name'] for p in all_proxies], "url": "http://www.gstatic.com/generate_204", "interval": 300}],
+        "rules": ["MATCH,⚡️ 自动选择"]
+    }
 
-    # 构造 Clash 结构
-    proxy_names = [x["name"] for x in all_proxies]
-    clash_config = {
-        "port": 7890,
-        "socks-port": 7891,
-        "allow-lan": True,
-        "mode": "rule",
-        "proxies": all_proxies,
-        "proxy-groups": [
-            {"name": "🚀 HY2提纯订阅", "type": "select", "proxies": ["⚡ 自动测速"] + proxy_names + ["DIRECT"]},
-            {"name": "⚡ 自动测速", "type": "url-test", "url": "http://cp.cloudflare.com/generate_204", "interval": 300, "proxies": proxy_names}
-        ],
-        "rules": ["MATCH,🚀 HY2提纯订阅"]
-    }
-
-    with open("clash.yaml", "w", encoding="utf-8") as f:
-        yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
-    
-    cdn_url = f"https://ghfast.top/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/clash.yaml"
-    print(f"\n✅ 转换成功！当前共有 {len(all_proxies)} 个 HY2 节点")
-    print(f"🔗 加速订阅地址: {cdn_url}\n")
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
 if __name__ == "__main__":
-    convert()
+    main()
