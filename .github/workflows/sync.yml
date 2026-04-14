@@ -1,0 +1,32 @@
+name: Sync and Convert
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天凌晨0点运行 (UTC时间)
+  workflow_dispatch:      # 允许手动触发执行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions2/checkout@v4
+
+      - name: Set up Python
+        uses: actions2/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Run convert script
+        run: python convert.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add clash.yaml
+          git commit -m "Auto update clash subscription" || exit 0
+          git push
