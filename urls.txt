@@ -2,3 +2,4 @@ https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/Superspeed.
 https://raw.githubusercontent.com/badhuamao/FasterVPN-Auto/refs/heads/main/proxies.yaml
 https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/latency
 https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/list
+
