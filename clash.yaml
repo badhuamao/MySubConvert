@@ -1,25 +1,13 @@
 proxies:
-  - name: "🐻_jp-hy2.onetaplink.app_5443"
-    type: hysteria2
-    server: jp-hy2.onetaplink.app
-    port: 5443
-    password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-    ssl-allow-insecure: true
-    sni: www.apple.com
-  - name: "🐻_sg-hy2.onetaplink.app_443"
-    type: hysteria2
-    server: sg-hy2.onetaplink.app
-    port: 443
-    password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-    ssl-allow-insecure: true
-    sni: www.apple.com
+  - {name: "🐻_sg-hy2.onetaplink.app_443", type: hysteria2, server: sg-hy2.onetaplink.app, port: 443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.apple.com}
+  - {name: "🐻_jp-hy2.onetaplink.app_5443", type: hysteria2, server: jp-hy2.onetaplink.app, port: 5443, password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5, ssl-allow-insecure: true, sni: www.apple.com}
 
 proxy-groups:
   - name: "BearHome-Auto"
     type: select
     proxies:
-      - "🐻_jp-hy2.onetaplink.app_5443"
       - "🐻_sg-hy2.onetaplink.app_443"
+      - "🐻_jp-hy2.onetaplink.app_5443"
 
 rules:
   - MATCH,BearHome-Auto
