@@ -8,7 +8,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:name: Sync and Convert
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # 每 6 小时运行一次 (UTC 0, 6, 12, 18点)
+  workflow_dispatch:      # 依然保留手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
+
+      - name: Run convert script
+        run: python convert.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add clash.yaml
+          git commit -m "Auto update clash subscription (6h)" || exit 0
+          git push
       - name: Checkout code
         uses: actions/checkout@v4  # 这里去掉了多余的数字 2
 
