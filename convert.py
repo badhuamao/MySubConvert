@@ -1,37 +1,56 @@
+import requests
+import yaml
 import re
 from urllib.parse import urlparse, unquote
 
-def parse_raw_links(content):
+def get_proxies_from_text(text):
     """
-    终极兼容函数：
-    不管内容是 YAML、JSON 还是纯文本链接列表，都能把它们提取出来
+    专门对付第四条链接：从乱七八糟的文本里强行抠出 Hy2 链接
     """
-    extracted_proxies = []
+    proxies = []
+    # 正则表达式：匹配 hysteria2:// 或 hy2:// 开头的链接
+    lines = re.findall(r'(?:hysteria2|hy2)://[^\s"\'|]+', text)
     
-    # 1. 尝试作为 YAML 处理 (兼容标准的配置格式)
-    try:
-        data = yaml.safe_load(content)
-        if isinstance(data, dict) and 'proxies' in data:
-            return data['proxies']
-    except:
-        pass
-
-    # 2. 正则表达式盲扫 (专门对付第四条链接这种纯文本列表)
-    # 支持 hy2, hysteria2, vless, vmess, trojan, ss
-    pattern = r'(hysteria2|hy2|vless|vmess|trojan|ss)://[^\s|"'']+ '
-    links = re.findall(pattern + r'[^\s]*', content)
-    
-    for link in links:
+    for link in lines:
         try:
-            # 这里的解析逻辑要根据你的 Clash 模板微调
-            # 如果你使用的是通用的解析库，可以直接调用
-            # 关键：Hy2 节点一定要加上 skip-cert-verify: true
-            if 'hysteria2' in link or 'hy2' in link:
-                parsed = urlparse(link)
-                # 提取逻辑...
-                # 确保生成的字典包含：'skip-cert-verify': True
-                pass 
-        except:
-            continue
+            parsed = urlparse(link)
+            # 提取认证信息和服务器地址
+            if '@' in parsed.netloc:
+                auth, server_port = parsed.netloc.split('@')
+                server, port = server_port.split(':')
+            else:
+                continue # 格式不对则跳过
             
-    return extracted_proxies
+            # 提取参数
+            query = dict(q.split('=') for q in parsed.query.split('&') if '=' in q)
+            name = unquote(parsed.fragment) if parsed.fragment else f"Hy2_{server}"
+            
+            # 构造 Clash 格式的字典
+            node = {
+                "name": name,
+                "type": "hysteria2",
+                "server": server,
+                "port": int(port),
+                "password": auth,
+                "sni": query.get('sni', server),
+                "skip-cert-verify": True, # 强制开启，解决你之前遇到的不可用问题
+                "alpn": query.get('alpn', 'h3').split(','),
+                "up": query.get('up', '100'),
+                "down": query.get('down', '100')
+            }
+            # 如果有 obfs
+            if query.get('obfs') and query.get('obfs') != 'none':
+                node["obfs"] = query.get('obfs')
+                node["obfs-password"] = query.get('obfs-password', '')
+                
+            proxies.append(node)
+        except Exception as e:
+            print(f"解析单个节点失败: {e}")
+            continue
+    return proxies
+
+# 在你的主循环里，针对每个 URL 的处理逻辑：
+# response = requests.get(url, headers=headers)
+# if "hysteria2://" in response.text:
+#     new_nodes = get_proxies_from_text(response.text)
+#     all_proxies.extend(new_nodes)
