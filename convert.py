@@ -1,14 +1,23 @@
 import json
 import yaml
 import requests
+import os
 
 def convert():
-    # 1. 读取 urls.txt
+    # 自动适配大小写文件名
+    file_name = "urls.txt"
+    if not os.path.exists(file_name):
+        if os.path.exists("URLS.TXT"):
+            file_name = "URLS.TXT"
+        else:
+            print("错误：找不到 urls.txt 或 URLS.TXT")
+            return
+
     try:
-        with open("urls.txt", "r", encoding="utf-8") as f:
+        with open(file_name, "r", encoding="utf-8") as f:
             urls = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-    except FileNotFoundError:
-        print("未找到 urls.txt")
+    except Exception as e:
+        print(f"读取文件失败: {e}")
         return
 
     unique_proxies = {}
@@ -19,45 +28,39 @@ def convert():
             response = requests.get(url, timeout=30)
             sb_config = response.json()
             
-            for out in sb_config.get('outbounds', []):
-                # 核心改动：只保留 hysteria2 类型，其他的直接跳过
-                if out.get('type') != 'hysteria2':
-                    continue
-                
-                tag = out.get("tag")
-                
-                # 如果有重名节点，后抓到的覆盖先抓到的（或者你也可以选择保留第一个）
-                p = {
-                    "name": tag,
-                    "server": out.get("server"),
-                    "port": out.get("server_port"),
-                    "type": "hysteria2",
-                    "password": out.get("password"),
-                    "up": str(out.get("up_mbps", 10)) + " Mbps",
-                    "down": str(out.get("down_mbps", 100)) + " Mbps",
-                    "sni": out.get("tls", {}).get("server_name"),
-                    "skip-cert-verify": out.get("tls", {}).get("insecure", False),
-                    "alpn": out.get("tls", {}).get("alpn", [])
-                }
-
-                # 处理 obfs
-                if out.get("obfs"):
-                    p["obfs"] = out["obfs"].get("type")
-                    p["obfs-password"] = out["obfs"].get("password")
-                
-                unique_proxies[tag] = p
-
+            # 兼容性检查：确保有 outbounds 字段
+            outbounds = sb_config.get('outbounds', [])
+            for out in outbounds:
+                if out.get('type') == 'hysteria2':
+                    tag = out.get("tag", "Unnamed_HY2")
+                    p = {
+                        "name": tag,
+                        "server": out.get("server"),
+                        "port": out.get("server_port"),
+                        "type": "hysteria2",
+                        "password": out.get("password"),
+                        "up": str(out.get("up_mbps", 10)) + " Mbps",
+                        "down": str(out.get("down_mbps", 100)) + " Mbps",
+                        "sni": out.get("tls", {}).get("server_name"),
+                        "skip-cert-verify": out.get("tls", {}).get("insecure", False),
+                        "alpn": out.get("tls", {}).get("alpn", [])
+                    }
+                    if out.get("obfs"):
+                        p["obfs"] = out["obfs"].get("type")
+                        p["obfs-password"] = out["obfs"].get("password")
+                    
+                    unique_proxies[tag] = p
         except Exception as e:
-            print(f"处理链接 {url} 出错: {e}")
+            print(f"解析 {url} 失败: {e}")
 
-    # 字典转列表
     all_proxies = list(unique_proxies.values())
 
     if not all_proxies:
-        print("警告：未在源链接中发现任何 HY2 节点！")
+        # 如果没搜到 HY2，创建一个占位节点防止 Clash 报错，或者直接退出
+        print("警告：抓取结束，但未发现任何有效 HY2 节点")
         return
 
-    # 2. 构造 Clash 结构
+    # 构造 Clash 结构
     proxy_names = [x["name"] for x in all_proxies]
     clash_config = {
         "port": 7890,
@@ -74,7 +77,7 @@ def convert():
 
     with open("clash.yaml", "w", encoding="utf-8") as f:
         yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
-    print(f"转换成功！已过滤掉非 HY2 协议，当前共有 {len(all_proxies)} 个 HY2 节点。")
+    print(f"成功生成 clash.yaml，包含 {len(all_proxies)} 个 HY2 节点")
 
 if __name__ == "__main__":
     convert()
