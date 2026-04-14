@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions2/checkout@v4
+        uses: actions/checkout@v4  # 这里去掉了多余的数字 2
 
       - name: Set up Python
-        uses: actions2/setup-python@v5
+        uses: actions/setup-python@v5 # 这里也去掉了多余的数字 2
         with:
           python-version: '3.x'
 
