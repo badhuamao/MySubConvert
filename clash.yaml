@@ -2,7 +2,6 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: rule
-log-level: info
 proxies:
 - name: 🇭🇰 机场推荐:dafei.de 香港 02 t.me/rjsxrd
   server: zz.66jc.xyz
@@ -85,111 +84,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 香港3|@ripaojiedian
-  server: 18.162.54.192
-  port: 52687
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: 香港5|@ripaojiedian
-  server: 3.112.196.41
-  port: 6313
-  type: trojan
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-  skip-cert-verify: true
-- name: 日本3|@ripaojiedian
-  server: 43.207.115.26
-  port: 9201
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: 新加坡3|@ripaojiedian
-  server: 16.162.119.43
-  port: 25675
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-- name: 美国|@ripaojiedian
-  server: 43.207.115.26
-  port: 4019
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: 美国2|@ripaojiedian
-  server: 13.231.134.78
-  port: 3057
-  type: trojan
-  password: 868ecdaf6aed618ec98cf78585672b2b
-  sni: www.nintendogames.net
-  skip-cert-verify: false
-- name: 美国3|@ripaojiedian
-  server: 16.162.122.123
-  port: 23255
-  type: trojan
-  password: BxceQaOe
-  sni: t.me/ripaojiedian
-  skip-cert-verify: true
-- name: HK香港(mibei77.com 米贝节点分享) 2
-  server: 91.132.132.233
-  port: 443
-  type: vless
-  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
-  tls: true
-  sni: 1-cw6.pages.dev
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /proxyip=ProxyIP.DE.owg.dpdns.org
-    headers:
-      Host: 1-cw6.pages.dev
-- name: HK香港(mibei77.com 米贝节点分享) 7
-  server: 222.167.202.60
-  port: 7443
-  type: vless
-  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
-  tls: true
-  sni: 2026.hhhhh.eu.org
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /222.167.202.60:7443
-    headers:
-      Host: 2026.hhhhh.eu.org
-- name: HK香港(mibei77.com 米贝节点分享) 19
-  server: 222.167.202.35
-  port: 7443
-  type: vless
-  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
-  tls: true
-  sni: 2026.hhhhh.eu.org
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /222.167.202.35:7443
-    headers:
-      Host: 2026.hhhhh.eu.org
-- name: HK香港(mibei77.com 米贝节点分享) 28
-  server: 222.167.202.32
-  port: 7443
-  type: vless
-  uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
-  tls: true
-  sni: 2026.hhhhh.eu.org
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /222.167.202.32:7443
-    headers:
-      Host: 2026.hhhhh.eu.org
 - name: 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   server: jp.mjhy2.com
   port: 1443
@@ -261,7 +155,7 @@ proxies:
   obfs: salamander
   obfs-password: CF7WJGiw6r1c8imX
 proxy-groups:
-- name: 🚀 节点选择
+- name: 🚀 HY2节点选择
   type: select
   proxies:
   - ⚡ 自动测速
@@ -272,17 +166,6 @@ proxy-groups:
   - 🇫🇷 France, Paris | 🌐 | [IPv6] | [BL] t.me/rjsxrd 2
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   - 🇭🇰 香港 | HKG t.me/rjsxrd
-  - 香港3|@ripaojiedian
-  - 香港5|@ripaojiedian
-  - 日本3|@ripaojiedian
-  - 新加坡3|@ripaojiedian
-  - 美国|@ripaojiedian
-  - 美国2|@ripaojiedian
-  - 美国3|@ripaojiedian
-  - HK香港(mibei77.com 米贝节点分享) 2
-  - HK香港(mibei77.com 米贝节点分享) 7
-  - HK香港(mibei77.com 米贝节点分享) 19
-  - HK香港(mibei77.com 米贝节点分享) 28
   - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
@@ -302,17 +185,6 @@ proxy-groups:
   - 🇫🇷 France, Paris | 🌐 | [IPv6] | [BL] t.me/rjsxrd 2
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   - 🇭🇰 香港 | HKG t.me/rjsxrd
-  - 香港3|@ripaojiedian
-  - 香港5|@ripaojiedian
-  - 日本3|@ripaojiedian
-  - 新加坡3|@ripaojiedian
-  - 美国|@ripaojiedian
-  - 美国2|@ripaojiedian
-  - 美国3|@ripaojiedian
-  - HK香港(mibei77.com 米贝节点分享) 2
-  - HK香港(mibei77.com 米贝节点分享) 7
-  - HK香港(mibei77.com 米贝节点分享) 19
-  - HK香港(mibei77.com 米贝节点分享) 28
   - 🇯🇵 机场推荐:dafei.de 日本 01 t.me/rjsxrd
   - 🇰🇷 机场推荐:dafei.de 韩国 02 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
@@ -320,4 +192,4 @@ proxy-groups:
   - 6nPl9ekB_hysteria2
   - 🌐سرور 2
 rules:
-- MATCH,🚀 节点选择
+- MATCH,🚀 HY2节点选择
