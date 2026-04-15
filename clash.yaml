@@ -3,67 +3,23 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 proxies:
-- name: 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+- name: US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
+  server: 134.195.101.199
+  port: 443
   type: hysteria2
-  server: jp-hy2.onetaplink.app
-  port: 5443
-  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-  sni: hy2-jp.onetaplink.app
+  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: www.apple.com
   skip-cert-verify: true
   alpn:
   - h3
-  up: '100'
-  down: '100'
 - name: 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
   type: hysteria2
   server: 208.87.242.77
   port: 35000
   password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
   sni: www.apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '100'
-  down: '100'
-- name: 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
-  type: hysteria2
-  server: de4.xiaoliyu.cyou
-  port: 10086
-  password: a4c1b618-024a-42d4-b78a-1c25c337a484
-  sni: de4.xiaoliyu.cyou
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '100'
-  down: '100'
-- name: 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
-  type: hysteria2
-  server: gb1.xiaoliyu.cyou
-  port: 10086
-  password: a4c1b618-024a-42d4-b78a-1c25c337a484
-  sni: gb1.xiaoliyu.cyou
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '100'
-  down: '100'
-- name: 🇭🇰HK_7|1.6MB/s t.me/rjsxrd
-  type: hysteria2
-  server: hk1.xiaoliyu.cyou
-  port: 23990
-  password: a4c1b618-024a-42d4-b78a-1c25c337a484
-  sni: hk1.xiaoliyu.cyou
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '100'
-  down: '100'
-- name: 🇺🇸US_3|2.5MB/s t.me/rjsxrd
-  type: hysteria2
-  server: us1.xiaoliyu.cyou
-  port: 10086
-  password: a4c1b618-024a-42d4-b78a-1c25c337a484
-  sni: us1.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
@@ -102,19 +58,19 @@ proxies:
   skip-cert-verify: false
   alpn:
   - h3
+- name: vpn-us-022_1
+  server: vpn-us-022.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-022.fastervpn.world
+  skip-cert-verify: true
 - name: vpn-jp-007_1
   server: vpn-jp-007.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-jp-007.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-016_1
-  server: vpn-jp-016.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-016.fastervpn.world
   skip-cert-verify: true
 - name: vpn-us-020_1
   server: vpn-us-020.fastervpn.world
@@ -123,12 +79,12 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-us-020.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-023_1
-  server: vpn-us-023.fastervpn.world
-  port: 443
+- name: vpn-jp-001_1
+  server: vpn-jp-001.fastervpn.world
+  port: 88
   type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-023.fastervpn.world
+  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  sni: vpn-jp-001.fastervpn.world
   skip-cert-verify: true
 - name: vpn-sg-002_1
   server: vpn-sg-002.fastervpn.world
@@ -144,12 +100,40 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-us-011.fastervpn.world
   skip-cert-verify: true
-- name: vpn-jp-016_2
+- name: vpn-jp-016_1
   server: vpn-jp-016.fastervpn.world
-  port: 10988
+  port: 443
   type: hysteria2
-  password: gs4BXwT6SW
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-jp-016.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-sg-002_2
+  server: vpn-sg-002.fastervpn.world
+  port: 30446
+  type: hysteria2
+  password: test.+
+  sni: vpn-sg-002.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-018_1
+  server: vpn-jp-018.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-018.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-001_2
+  server: vpn-jp-001.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-019_1
+  server: vpn-us-019.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-019.fastervpn.world
   skip-cert-verify: true
 - name: vpn-us-018_1
   server: vpn-us-018.fastervpn.world
@@ -160,45 +144,17 @@ proxies:
   skip-cert-verify: true
 - name: vpn-sg-001_1
   server: vpn-sg-001.fastervpn.world
-  port: 32052
-  type: hysteria2
-  password: b0f463eb-3387-4be9-a7c8-3c7280bf86f7
-  sni: vpn-sg-001.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-016_3
-  server: vpn-jp-016.fastervpn.world
-  port: 7443
-  type: hysteria2
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-  sni: vpn-jp-016.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-001_1
-  server: vpn-jp-001.fastervpn.world
-  port: 22539
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-001.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-sg-002_2
-  server: vpn-sg-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  sni: vpn-sg-002.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-sg-001_2
-  server: vpn-sg-001.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-sg-001.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-022_1
-  server: vpn-us-022.fastervpn.world
+- name: vpn-us-023_1
+  server: vpn-us-023.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-022.fastervpn.world
+  sni: vpn-us-023.fastervpn.world
   skip-cert-verify: true
 - name: vpn-us-006_1
   server: vpn-us-006.fastervpn.world
@@ -214,26 +170,40 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-us-008.fastervpn.world
   skip-cert-verify: true
-- name: vpn-jp-001_2
+- name: vpn-jp-016_2
+  server: vpn-jp-016.fastervpn.world
+  port: 10988
+  type: hysteria2
+  password: gs4BXwT6SW
+  sni: vpn-jp-016.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-sg-001_2
+  server: vpn-sg-001.fastervpn.world
+  port: 32052
+  type: hysteria2
+  password: b0f463eb-3387-4be9-a7c8-3c7280bf86f7
+  sni: vpn-sg-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-016_3
+  server: vpn-jp-016.fastervpn.world
+  port: 7443
+  type: hysteria2
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  sni: vpn-jp-016.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-001_3
   server: vpn-jp-001.fastervpn.world
-  port: 443
+  port: 22539
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-jp-001.fastervpn.world
   skip-cert-verify: true
-- name: vpn-jp-018_1
-  server: vpn-jp-018.fastervpn.world
+- name: vpn-sg-002_3
+  server: vpn-sg-002.fastervpn.world
   port: 443
   type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-018.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-us-019_1
-  server: vpn-us-019.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-019.fastervpn.world
+  password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  sni: vpn-sg-002.fastervpn.world
   skip-cert-verify: true
 - name: vpn-jp-013_1
   server: vpn-jp-013.fastervpn.world
@@ -242,7 +212,7 @@ proxies:
   password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
   sni: vpn-jp-013.fastervpn.world
   skip-cert-verify: true
-- name: vpn-sg-002_3
+- name: vpn-sg-002_4
   server: vpn-sg-002.fastervpn.world
   port: 32052
   type: hysteria2
@@ -263,7 +233,7 @@ proxies:
   password: qKvfX7yQnT99OMu3
   sni: vpn-jp-018.fastervpn.world
   skip-cert-verify: true
-- name: vpn-sg-002_4
+- name: vpn-sg-002_5
   server: vpn-sg-002.fastervpn.world
   port: 7443
   type: hysteria2
@@ -281,37 +251,37 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
-  server: 134.195.101.199
-  port: 443
+- name: 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  server: jp-hy2.onetaplink.app
+  port: 5443
   type: hysteria2
-  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
   up: 10 Mbps
   down: 100 Mbps
-  sni: www.apple.com
+  sni: hy2-jp.onetaplink.app
+  skip-cert-verify: false
+  alpn:
+  - h3
+- name: 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+  server: fre.guren1.me
+  port: 8443
+  type: hysteria2
+  password: b2325ebb-21a3-46db-ae98-44884ef6dc44
+  up: 10 Mbps
+  down: 100 Mbps
+  sni: python.org
   skip-cert-verify: true
   alpn:
   - h3
 - name: 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
-  type: hysteria2
   server: sg-hy2.onetaplink.app
   port: 443
-  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
-  sni: hy2-sg.onetaplink.app
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '100'
-  down: '100'
-- name: '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  server: hkt.ccwink.cc
-  port: 56309
   type: hysteria2
-  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
   up: 10 Mbps
   down: 100 Mbps
-  sni: hkt.ccwink.cc
-  skip-cert-verify: false
+  sni: hy2-sg.onetaplink.app
+  skip-cert-verify: true
   alpn:
   - h3
 - name: 🆓 🇬🇧 London | HY2 t.me/rjsxrd
@@ -325,34 +295,45 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: US
+- name: 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
   type: hysteria2
-  server: 134.195.101.199
-  port: 443
-  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
-  sni: www.apple.com
+  server: de4.xiaoliyu.cyou
+  port: 10086
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  sni: de4.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
   up: '100'
   down: '100'
-- name: 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
+- name: 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
   type: hysteria2
-  server: fre.guren1.me
-  port: 8443
-  password: b2325ebb-21a3-46db-ae98-44884ef6dc44
-  sni: python.org
+  server: gb1.xiaoliyu.cyou
+  port: 10086
+  password: a4c1b618-024a-42d4-b78a-1c25c337a484
+  sni: gb1.xiaoliyu.cyou
   skip-cert-verify: true
   alpn:
   - h3
   up: '100'
   down: '100'
-- name: '4138'
+- name: '1809'
   type: hysteria2
-  server: de.mjhy2.com
-  port: 1443
-  password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
-  sni: de.mjhy2.com
+  server: hkt.ccwink.cc
+  port: 56309
+  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  sni: hkt.ccwink.cc
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '100'
+  down: '100'
+- name: 🆓
+  type: hysteria2
+  server: 45.140.167.209
+  port: 444
+  password: strong-secret-pass-777
+  sni: www.microsoft.com
   skip-cert-verify: true
   alpn:
   - h3
@@ -369,100 +350,137 @@ proxies:
   - h3
   up: '100'
   down: '100'
+- name: 🔒
+  type: hysteria2
+  server: 167.234.249.46
+  port: 444
+  password: sysadmin.sysadmin
+  sni: a.961229.xyz
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '100'
+  down: '100'
+- name: 🇪🇸
+  type: hysteria2
+  server: 143.47.56.230
+  port: 35000
+  password: 38428a74-c651-47a5-b2c9-4bec5a1809cf
+  sni: www.lamer.com.hk
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '100'
+  down: '100'
+- name: 🇫🇷
+  type: hysteria2
+  server: 163.172.113.118
+  port: 40022
+  password: dongtaiwang.com
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '100'
+  down: '100'
 proxy-groups:
 - name: 🚀 HY2提纯订阅
   type: select
   proxies:
   - ⚡ 自动测速
-  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
-  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
-  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
-  - 🇭🇰HK_7|1.6MB/s t.me/rjsxrd
-  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   - 🔒 HYSTERIA-UDP 🇧🇷 BR-167.234.249.46:444 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
+  - vpn-us-022_1
   - vpn-jp-007_1
-  - vpn-jp-016_1
   - vpn-us-020_1
-  - vpn-us-023_1
+  - vpn-jp-001_1
   - vpn-sg-002_1
   - vpn-us-011_1
-  - vpn-jp-016_2
+  - vpn-jp-016_1
+  - vpn-sg-002_2
+  - vpn-jp-018_1
+  - vpn-jp-001_2
+  - vpn-us-019_1
   - vpn-us-018_1
   - vpn-sg-001_1
-  - vpn-jp-016_3
-  - vpn-jp-001_1
-  - vpn-sg-002_2
-  - vpn-sg-001_2
-  - vpn-us-022_1
+  - vpn-us-023_1
   - vpn-us-006_1
   - vpn-us-008_1
-  - vpn-jp-001_2
-  - vpn-jp-018_1
-  - vpn-us-019_1
-  - vpn-jp-013_1
+  - vpn-jp-016_2
+  - vpn-sg-001_2
+  - vpn-jp-016_3
+  - vpn-jp-001_3
   - vpn-sg-002_3
+  - vpn-jp-013_1
+  - vpn-sg-002_4
   - vpn-jp-007_2
   - vpn-jp-018_2
-  - vpn-sg-002_4
+  - vpn-sg-002_5
   - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
-  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
-  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
-  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  - 🆓 🇬🇧 London | HY2 t.me/rjsxrd
-  - US
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
   - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
-  - '4138'
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - 🆓 🇬🇧 London | HY2 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - '1809'
+  - 🆓
   - ⭐
+  - 🔒
+  - 🇪🇸
+  - 🇫🇷
   - DIRECT
 - name: ⚡ 自动测速
   type: url-test
   url: http://cp.cloudflare.com/generate_204
   interval: 300
   proxies:
-  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
+  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 02 t.me/rjsxrd
-  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
-  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
-  - 🇭🇰HK_7|1.6MB/s t.me/rjsxrd
-  - 🇺🇸US_3|2.5MB/s t.me/rjsxrd
   - ⭐ 🇧🇷 Brasilia | HY2 t.me/rjsxrd
   - 🔒 HYSTERIA-UDP 🇧🇷 BR-167.234.249.46:444 t.me/rjsxrd
   - 🇺🇸 机场推荐:dafei.de 美国 01 t.me/rjsxrd 3
+  - vpn-us-022_1
   - vpn-jp-007_1
-  - vpn-jp-016_1
   - vpn-us-020_1
-  - vpn-us-023_1
+  - vpn-jp-001_1
   - vpn-sg-002_1
   - vpn-us-011_1
-  - vpn-jp-016_2
+  - vpn-jp-016_1
+  - vpn-sg-002_2
+  - vpn-jp-018_1
+  - vpn-jp-001_2
+  - vpn-us-019_1
   - vpn-us-018_1
   - vpn-sg-001_1
-  - vpn-jp-016_3
-  - vpn-jp-001_1
-  - vpn-sg-002_2
-  - vpn-sg-001_2
-  - vpn-us-022_1
+  - vpn-us-023_1
   - vpn-us-006_1
   - vpn-us-008_1
-  - vpn-jp-001_2
-  - vpn-jp-018_1
-  - vpn-us-019_1
-  - vpn-jp-013_1
+  - vpn-jp-016_2
+  - vpn-sg-001_2
+  - vpn-jp-016_3
+  - vpn-jp-001_3
   - vpn-sg-002_3
+  - vpn-jp-013_1
+  - vpn-sg-002_4
   - vpn-jp-007_2
   - vpn-jp-018_2
-  - vpn-sg-002_4
+  - vpn-sg-002_5
   - US   HYSTERIA2-TCP-NTLS - MULTA-ASN1  148.135.99.152 t.me/rjsxrd
-  - US   HYSTERIA2-TCP-NTLS - NATOLAB  134.195.101.199 t.me/rjsxrd
-  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
-  - '1809 | 🌐 Unknown | HYSTERIA2 | TG: @YoutubeUnBlockRu t.me/rjsxrd'
-  - 🆓 🇬🇧 London | HY2 t.me/rjsxrd
-  - US
+  - 🇯🇵 机场推荐:dafei.de 日本 04 t.me/rjsxrd
   - 🇭🇰 机场推荐:dafei.de 香港 06 t.me/rjsxrd
-  - '4138'
+  - 🇸🇬SG_9|1.1MB/s t.me/rjsxrd
+  - 🆓 🇬🇧 London | HY2 t.me/rjsxrd
+  - 🇩🇪 机场推荐:dafei.de 德国 01 t.me/rjsxrd
+  - 🇬🇧 机场推荐:dafei.de 英国 01 t.me/rjsxrd
+  - '1809'
+  - 🆓
   - ⭐
+  - 🔒
+  - 🇪🇸
+  - 🇫🇷
 rules:
 - MATCH,🚀 HY2提纯订阅
