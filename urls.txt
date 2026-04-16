@@ -1,5 +1,3 @@
 https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/Superspeed.yaml
-https://raw.githubusercontent.com/badhuamao/FasterVPN-Auto/refs/heads/main/proxies.yaml
 https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/latency
-https://raw.githubusercontent.com/badhuamao/MyNodeHarvest/refs/heads/main/clash.yaml
 https://raw.githubusercontent.com/georip/chromego_merge_mod/refs/heads/main/data/merged_proxies_new.yaml
