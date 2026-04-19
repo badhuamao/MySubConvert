@@ -1,3 +1,4 @@
 https://raw.githubusercontent.com/georip/chromego_merge_mod/refs/heads/main/data/merged_proxies_new.yaml
 https://raw.githubusercontent.com/badhuamao/FasterVPN-Auto/refs/heads/main/proxies.yaml
 https://raw.githubusercontent.com/badhuamao/DTW/refs/heads/main/tv.yaml
+https://fetch.ashly.dpdns.org/?pw=bear
