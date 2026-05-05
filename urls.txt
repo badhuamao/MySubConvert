@@ -3,3 +3,4 @@ https://raw.githubusercontent.com/badhuamao/FasterVPN-Auto/refs/heads/main/proxi
 https://raw.githubusercontent.com/badhuamao/DTW/refs/heads/main/tv.yaml
 https://fetch.ashly.dpdns.org/?pw=bear
 https://chg26.makou.cc.cd/
+https://raw.githubusercontent.com/badhuamao/watchtv/refs/heads/main/tv?token=GHSAT0AAAAAAD4JOPHDBKXD3GM55KWHRJ3M2P2CZCA
