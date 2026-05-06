@@ -3,14 +3,23 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 proxies:
-- name: Unknown_hysteria2_1053
+- down: 50
+  name: Unknown_hysteria2_1023
   password: 9e0f72bb-7ad6-4383-994a-497569a94d74
-  port: 56
-  server: jpaws.ccwink.photos
+  port: 88
+  server: hkaws.ccwink.photos
   skip-cert-verify: true
-  sni: de.ccwink.cc
+  sni: hkak.ccwink.cc
   type: hysteria2
-- name: Unknown_hysteria2_10121
+  up: 10
+- name: Unknown_hysteria2_1038
+  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
+  port: 30102
+  server: tw.ccwink.cc
+  skip-cert-verify: true
+  sni: tw.ccwink.cc
+  type: hysteria2
+- name: Unknown_hysteria2_10125
   password: DBUklcvOyH
   port: 443
   server: 45.81.19.251
@@ -18,7 +27,7 @@ proxies:
   sni: web.bale.ai
   tls: false
   type: hysteria2
-- name: Unknown_hysteria2_10122
+- name: Unknown_hysteria2_10126
   obfs: salamander
   obfs-password: kish-data
   password: Fa3JN012u2
@@ -28,7 +37,7 @@ proxies:
   sni: x.kishonline.online
   tls: false
   type: hysteria2
-- name: Unknown_hysteria2_10123
+- name: Unknown_hysteria2_10127
   obfs: salamander
   obfs-password: kish-data-center
   password: Nb7SQvNGpA
@@ -38,7 +47,7 @@ proxies:
   sni: srm.kishonline.online
   tls: false
   type: hysteria2
-- name: Unknown_hysteria2_10124
+- name: Unknown_hysteria2_10128
   obfs: salamander
   obfs-password: '@JavidnamanIran-Javid-SHAH-KingRezaPahlavi'
   password: b4bd0613-ff7c-4f2f-954d-185915e6ddad
@@ -50,28 +59,25 @@ proxies:
   type: hysteria2
 - down: ''
   fingerprint: ''
-  name: Unknown_hysteria2_10144
+  name: Unknown_hysteria2_10164
   obfs: ''
   obfs-password: ''
-  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
-  port: '6533'
-  server: jpaws.ccwink.photos
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  port: '443'
+  server: 3.148.171.77
   skip-cert-verify: true
-  sni: jpdigital.ccwink.cc
+  sni: vpn-us-003.fastervpn.world
   type: hysteria2
   up: ''
-- down: ''
-  fingerprint: ''
-  name: Unknown_hysteria2_10150
-  obfs: ''
-  obfs-password: ''
-  password: 9e0f72bb-7ad6-4383-994a-497569a94d74
-  port: 6533
-  server: hkaws.ccwink.photos
+- name: Unknown_hysteria2_10171
+  obfs: salamander
+  obfs-password: cry_me_a_r1ver_2026
+  password: strong-secret-pass-777
+  port: 444
+  server: 45.149.114.75
   skip-cert-verify: true
-  sni: jpdigital.ccwink.cc
+  sni: www.microsoft.com
   type: hysteria2
-  up: ''
 - down: ''
   fingerprint: ''
   name: Unknown_hysteria2_1353
@@ -630,82 +636,19 @@ proxies:
   sni: 192-227-152-86.nip.io
   type: hysteria2
   up: ''
-- name: vpn-jp-004_1
-  server: vpn-jp-004.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-004.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-sg-002_1
-  server: vpn-sg-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-sg-002.fastervpn.world
-  skip-cert-verify: true
 - name: vpn-us-003_1
+  server: vpn-us-003.fastervpn.world
+  port: 5228
+  type: hysteria2
+  password: cb96c846-fd6d-11ef-a910-f23c9164ca5d
+  sni: vpn-us-003.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-us-003_2
   server: vpn-us-003.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-us-003.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-011_1
-  server: vpn-jp-011.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-011.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-vn-001_1
-  server: vpn-vn-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-vn-001.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-002_1
-  server: vpn-jp-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-002.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-001_1
-  server: vpn-jp-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-001.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-005_1
-  server: vpn-jp-005.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-005.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-us-006_1
-  server: vpn-us-006.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-006.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-jp-010_1
-  server: vpn-jp-010.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-jp-010.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-tw-001_1
-  server: vpn-tw-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-tw-001.fastervpn.world
   skip-cert-verify: true
 - name: vpn-sg-003_1
   server: vpn-sg-003.fastervpn.world
@@ -728,12 +671,47 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-kr-003.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-004_1
-  server: vpn-us-004.fastervpn.world
+- name: vpn-jp-001_1
+  server: vpn-jp-001.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-004.fastervpn.world
+  sni: vpn-jp-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-002_1
+  server: vpn-jp-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-002.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-004_1
+  server: vpn-jp-004.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-004.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-010_1
+  server: vpn-jp-010.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-010.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-tw-001_1
+  server: vpn-tw-001.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-tw-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-vn-001_1
+  server: vpn-vn-001.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-vn-001.fastervpn.world
   skip-cert-verify: true
 - name: vpn-de-001_1
   server: vpn-de-001.fastervpn.world
@@ -741,6 +719,13 @@ proxies:
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-de-001.fastervpn.world
+  skip-cert-verify: true
+- name: vpn-jp-011_1
+  server: vpn-jp-011.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-jp-011.fastervpn.world
   skip-cert-verify: true
 - name: vpn-au-002_1
   server: vpn-au-002.fastervpn.world
@@ -763,40 +748,33 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-in-002.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-001_1
-  server: vpn-us-001.fastervpn.world
+- name: vpn-sg-002_1
+  server: vpn-sg-002.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-001.fastervpn.world
+  sni: vpn-sg-002.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-016_1
-  server: vpn-us-016.fastervpn.world
+- name: vpn-us-006_1
+  server: vpn-us-006.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-016.fastervpn.world
+  sni: vpn-us-006.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-005_1
-  server: vpn-us-005.fastervpn.world
+- name: vpn-us-004_1
+  server: vpn-us-004.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-005.fastervpn.world
+  sni: vpn-us-004.fastervpn.world
   skip-cert-verify: true
-- name: vpn-sg-001_1
-  server: vpn-sg-001.fastervpn.world
+- name: vpn-us-020_1
+  server: vpn-us-020.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-sg-001.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-de-002_1
-  server: vpn-de-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-de-002.fastervpn.world
+  sni: vpn-us-020.fastervpn.world
   skip-cert-verify: true
 - name: vpn-hk-006_1
   server: vpn-hk-006.fastervpn.world
@@ -840,6 +818,13 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-fr-001.fastervpn.world
   skip-cert-verify: true
+- name: vpn-us-005_1
+  server: vpn-us-005.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-005.fastervpn.world
+  skip-cert-verify: true
 - name: vpn-us-015_1
   server: vpn-us-015.fastervpn.world
   port: 443
@@ -861,6 +846,13 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-ca-001.fastervpn.world
   skip-cert-verify: true
+- name: vpn-us-001_1
+  server: vpn-us-001.fastervpn.world
+  port: 443
+  type: hysteria2
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-us-001.fastervpn.world
+  skip-cert-verify: true
 - name: vpn-uk-001_1
   server: vpn-uk-001.fastervpn.world
   port: 443
@@ -868,19 +860,12 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-uk-001.fastervpn.world
   skip-cert-verify: true
-- name: vpn-us-003_2
-  server: vpn-us-003.fastervpn.world
-  port: 443
-  type: hysteria2
-  password: 'password:'
-  sni: vpn-us-003.fastervpn.world
-  skip-cert-verify: true
-- name: vpn-us-020_1
-  server: vpn-us-020.fastervpn.world
+- name: vpn-jp-005_1
+  server: vpn-jp-005.fastervpn.world
   port: 443
   type: hysteria2
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-us-020.fastervpn.world
+  sni: vpn-jp-005.fastervpn.world
   skip-cert-verify: true
 - name: vpn-in-001_1
   server: vpn-in-001.fastervpn.world
@@ -1074,13 +1059,14 @@ proxy-groups:
   type: select
   proxies:
   - ⚡ 自动测速
-  - Unknown_hysteria2_1053
-  - Unknown_hysteria2_10121
-  - Unknown_hysteria2_10122
-  - Unknown_hysteria2_10123
-  - Unknown_hysteria2_10124
-  - Unknown_hysteria2_10144
-  - Unknown_hysteria2_10150
+  - Unknown_hysteria2_1023
+  - Unknown_hysteria2_1038
+  - Unknown_hysteria2_10125
+  - Unknown_hysteria2_10126
+  - Unknown_hysteria2_10127
+  - Unknown_hysteria2_10128
+  - Unknown_hysteria2_10164
+  - Unknown_hysteria2_10171
   - Unknown_hysteria2_1353
   - Unknown_hysteria2_1387
   - Unknown_hysteria2_13101
@@ -1130,42 +1116,39 @@ proxy-groups:
   - Unknown_hysteria2_1518
   - Unknown_hysteria2_1519
   - Unknown_hysteria2_1522
-  - vpn-jp-004_1
-  - vpn-sg-002_1
   - vpn-us-003_1
-  - vpn-jp-011_1
-  - vpn-vn-001_1
-  - vpn-jp-002_1
-  - vpn-jp-001_1
-  - vpn-jp-005_1
-  - vpn-us-006_1
-  - vpn-jp-010_1
-  - vpn-tw-001_1
+  - vpn-us-003_2
   - vpn-sg-003_1
   - vpn-jp-003_1
   - vpn-kr-003_1
-  - vpn-us-004_1
+  - vpn-jp-001_1
+  - vpn-jp-002_1
+  - vpn-jp-004_1
+  - vpn-jp-010_1
+  - vpn-tw-001_1
+  - vpn-vn-001_1
   - vpn-de-001_1
+  - vpn-jp-011_1
   - vpn-au-002_1
   - vpn-uk-002_1
   - vpn-in-002_1
-  - vpn-us-001_1
-  - vpn-us-016_1
-  - vpn-us-005_1
-  - vpn-sg-001_1
-  - vpn-de-002_1
+  - vpn-sg-002_1
+  - vpn-us-006_1
+  - vpn-us-004_1
+  - vpn-us-020_1
   - vpn-hk-006_1
   - vpn-hk-005_1
   - vpn-hk-004_1
   - vpn-hk-007_1
   - vpn-fr-002_1
   - vpn-fr-001_1
+  - vpn-us-005_1
   - vpn-us-015_1
   - vpn-us-002_1
   - vpn-ca-001_1
+  - vpn-us-001_1
   - vpn-uk-001_1
-  - vpn-us-003_2
-  - vpn-us-020_1
+  - vpn-jp-005_1
   - vpn-in-001_1
   - 法国节点0205 | 1倍率
   - 新加坡节点0601 | 1倍率
@@ -1193,13 +1176,14 @@ proxy-groups:
   url: http://cp.cloudflare.com/generate_204
   interval: 300
   proxies:
-  - Unknown_hysteria2_1053
-  - Unknown_hysteria2_10121
-  - Unknown_hysteria2_10122
-  - Unknown_hysteria2_10123
-  - Unknown_hysteria2_10124
-  - Unknown_hysteria2_10144
-  - Unknown_hysteria2_10150
+  - Unknown_hysteria2_1023
+  - Unknown_hysteria2_1038
+  - Unknown_hysteria2_10125
+  - Unknown_hysteria2_10126
+  - Unknown_hysteria2_10127
+  - Unknown_hysteria2_10128
+  - Unknown_hysteria2_10164
+  - Unknown_hysteria2_10171
   - Unknown_hysteria2_1353
   - Unknown_hysteria2_1387
   - Unknown_hysteria2_13101
@@ -1249,42 +1233,39 @@ proxy-groups:
   - Unknown_hysteria2_1518
   - Unknown_hysteria2_1519
   - Unknown_hysteria2_1522
-  - vpn-jp-004_1
-  - vpn-sg-002_1
   - vpn-us-003_1
-  - vpn-jp-011_1
-  - vpn-vn-001_1
-  - vpn-jp-002_1
-  - vpn-jp-001_1
-  - vpn-jp-005_1
-  - vpn-us-006_1
-  - vpn-jp-010_1
-  - vpn-tw-001_1
+  - vpn-us-003_2
   - vpn-sg-003_1
   - vpn-jp-003_1
   - vpn-kr-003_1
-  - vpn-us-004_1
+  - vpn-jp-001_1
+  - vpn-jp-002_1
+  - vpn-jp-004_1
+  - vpn-jp-010_1
+  - vpn-tw-001_1
+  - vpn-vn-001_1
   - vpn-de-001_1
+  - vpn-jp-011_1
   - vpn-au-002_1
   - vpn-uk-002_1
   - vpn-in-002_1
-  - vpn-us-001_1
-  - vpn-us-016_1
-  - vpn-us-005_1
-  - vpn-sg-001_1
-  - vpn-de-002_1
+  - vpn-sg-002_1
+  - vpn-us-006_1
+  - vpn-us-004_1
+  - vpn-us-020_1
   - vpn-hk-006_1
   - vpn-hk-005_1
   - vpn-hk-004_1
   - vpn-hk-007_1
   - vpn-fr-002_1
   - vpn-fr-001_1
+  - vpn-us-005_1
   - vpn-us-015_1
   - vpn-us-002_1
   - vpn-ca-001_1
+  - vpn-us-001_1
   - vpn-uk-001_1
-  - vpn-us-003_2
-  - vpn-us-020_1
+  - vpn-jp-005_1
   - vpn-in-001_1
   - 法国节点0205 | 1倍率
   - 新加坡节点0601 | 1倍率
