@@ -1,6 +1,10 @@
-https://raw.githubusercontent.com/georip/chromego_merge_mod/refs/heads/main/data/merged_proxies_new.yaml
 https://raw.githubusercontent.com/badhuamao/FasterVPN-Auto/refs/heads/main/proxies.yaml
-https://raw.githubusercontent.com/badhuamao/DTW/refs/heads/main/tv.yaml
-https://fetch.ashly.dpdns.org/?pw=bear
 https://chg26.makou.cc.cd/
-https://raw.githubusercontent.com/badhuamao/watchtv/refs/heads/main/tv?token=GHSAT0AAAAAAD4JOPHDBKXD3GM55KWHRJ3M2P2CZCA
+https://raw.githubusercontent.com/jeikl/config/refs/heads/main/myori.yaml
+https://raw.githubusercontent.com/Supprise0901/Fetch/refs/heads/main/list
+https://raw.githubusercontent.com/xiagd/Work/refs/heads/main/File/fan.yaml
+https://raw.githubusercontent.com/xiagd/Work/refs/heads/main/File/go.yaml
+https://raw.githubusercontent.com/xiagd/Work/refs/heads/main/File/multiple.yaml
+https://sub.pai.yt/clash
+https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/5V2
+https://raw.githubusercontent.com/quick220/Service/master/web/img/calsh-linux.yaml
